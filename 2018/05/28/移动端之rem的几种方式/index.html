@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sheery">
 <meta property="og:description" content="移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式： 第一种12345678910111213141516(function (doc, win) &amp;#123;        var docEl = doc.documentElement,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T08:54:47.287Z">
+<meta property="og:updated_time" content="2018-05-28T09:19:22.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端之rem的几种方式">
 <meta name="twitter:description" content="移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式： 第一种12345678910111213141516(function (doc, win) &amp;#123;        var docEl = doc.documentElement,">
@@ -383,6 +383,7 @@
 <h1 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>);</span><br><span class="line"><span class="keyword">var</span> rem = html.offsetWidth/<span class="number">7.5</span>;（设计稿宽度为<span class="number">750</span>px，offsetWidth = width + padding + border， 和margin无关。）</span><br><span class="line">html.style.fontSize = rem + <span class="string">"px"</span>;</span><br></pre></td></tr></table></figure>
 <h1 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h1><p> 设置base，一般来说为设计稿都尺寸/10；设置html的<code>fontSize</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> doc_wid = <span class="built_in">document</span>.body.clientWidth/<span class="number">10</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>].style.fontSize=doc_wid+<span class="string">"px"</span>;</span><br></pre></td></tr></table></figure></p>
 <p> 尺寸计算：设计稿上面的实际尺寸<code>rem/base</code><br> 比如<code>header</code>在设计稿为142px，那么就设置为 <code>.header{height:142rem/$base}</code> (scss的写法)</p>
+<p>以上是关于<code>rem</code>的几种方法，上面第一，第二种方法都有用过，第三种是从朋友那安利到的方法，暂时还没运用过。个人使用下来，感觉<code>rem</code>计算挺麻烦的，后来通过百度的帮助，知道了<code>vh/vw+percent</code>的方式，个人更喜欢<code>vh/vw+percent</code>的写法。</p>
 
       
     </div>
