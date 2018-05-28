@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="SheeryLiu" />
+  <meta name="keywords" content="app,js,css,h5," />
 
 
 
@@ -105,14 +105,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://sheery0913.github.io/categories/index.html">
+<meta name="description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
+<meta name="keywords" content="app,js,css,h5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端之rem的几种方式">
+<meta property="og:url" content="http://sheery0913.github.io/2018/05/28/移动端之rem的几种方式/index.html">
 <meta property="og:site_name" content="Sheery">
+<meta property="og:description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T07:35:17.359Z">
+<meta property="og:updated_time" content="2018-05-28T07:47:03.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="移动端之rem的几种方式">
+<meta name="twitter:description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
 
 
 
@@ -142,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://sheery0913.github.io/categories/"/>
+  <link rel="canonical" href="http://sheery0913.github.io/2018/05/28/移动端之rem的几种方式/"/>
 
 
 
 
 
-  <title>categories | Sheery</title>
+  <title>移动端之rem的几种方式 | Sheery</title>
   
 
 
@@ -273,40 +277,171 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sheery0913.github.io/2018/05/28/移动端之rem的几种方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sheery liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sheery">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skills/">技术</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">移动端之rem的几种方式</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T15:39:05+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h1><ul>
+<li>(function (doc, win) {<pre><code>var docEl = doc.documentElement,
+    resizeEvt = &apos;orientationchange&apos; in window ? &apos;orientationchange&apos; : &apos;resize&apos;,
+    recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        if(clientWidth&gt;=640){
+            docEl.style.fontSize = &apos;100px&apos;;
+        }else{
+            docEl.style.fontSize = 100 * (clientWidth / 640) + &apos;px&apos;;（设计稿宽度为640px）
+        }
+    };
+if (!doc.addEventListener) return;
+win.addEventListener(resizeEvt, recalc, false);
+doc.addEventListener(&apos;DOMContentLoaded&apos;, recalc, false);
+</code></pre>  })(document, window);</li>
+</ul>
+<h1 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h1><p>var html = document.querySelector(‘html’);<br>var rem = html.offsetWidth/7.5;（设计稿宽度为750px，offsetWidth = width + padding + border， 和margin无关。）<br>html.style.fontSize = rem + “px”;</p>
+<h1 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h1><p>设置base，一般来说为设计稿都尺寸/10；设置html的fontSize。</p>
+<pre><code>var doc_wid = document.body.clientWidth/10;
+document.getElementsByTagName(&quot;html&quot;)[0].style.fontSize=doc_wid+&quot;px&quot;;
+</code></pre><p>尺寸计算：设计稿上面的实际尺寸rem/base<br>比如header在设计稿为142px，那么就设置为 .header{height:142rem/$base} (scss的写法)</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/app/" rel="tag"># app</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/h5/" rel="tag"># h5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/28/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -339,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -400,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一种"><span class="nav-number">1.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二种"><span class="nav-number">2.</span> <span class="nav-text">第二种</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三种"><span class="nav-number">3.</span> <span class="nav-text">第三种</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
