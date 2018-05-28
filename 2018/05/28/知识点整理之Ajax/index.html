@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sheery">
 <meta property="og:description" content="好久没有好好梳理关于js的基础知识，这两天翻了翻以前的笔记，感觉好多知识点都已经记不大清楚了，因此起了整理知识点的念头。 ajax的使用(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.(3)设置响应HTTP请求状态变化的函数.(4)发送HTTP请求.(5)获取异步调用返回的数据.(6)使用Java">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T09:57:31.094Z">
+<meta property="og:updated_time" content="2018-05-28T09:58:58.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点整理之Ajax">
 <meta name="twitter:description" content="好久没有好好梳理关于js的基础知识，这两天翻了翻以前的笔记，感觉好多知识点都已经记不大清楚了，因此起了整理知识点的念头。 ajax的使用(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.(3)设置响应HTTP请求状态变化的函数.(4)发送HTTP请求.(5)获取异步调用返回的数据.(6)使用Java">
@@ -379,7 +379,7 @@
 
       
         <p><strong>好久没有好好梳理关于<code>js</code>的基础知识，这两天翻了翻以前的笔记，感觉好多知识点都已经记不大清楚了，因此起了整理知识点的念头。</strong></p>
-<h1 id="ajax的使用"><a href="#ajax的使用" class="headerlink" title="ajax的使用"></a>ajax的使用</h1><p>(1)创建<code>XMLHttpRequest</code>对象,也就是创建一个异步调用对象.<br>(2)创建一个新的<code>HTTP</code>请求,并指定该<code>HTTP</code>请求的方法、<code>URL</code>及验证信息.<br>(3)设置响应<code>HTTP</code>请求状态变化的函数.<br>(4)发送<code>HTTP</code>请求.<br>(5)获取异步调用返回的数据.<br>(6)使用<code>JavaScript</code>和<code>DOM</code>实现局部刷新.<br>    <code>`</code>javascript<br>    var xmlHttp = new XMLHttpRequest();<br>    xmlHttp.open(‘GET’,’demo.php’,’true’);<br>    xmlHttp.send()<br>    xmlHttp.onreadystatechange = function(){<br>        if(xmlHttp.readyState === 4 &amp; xmlHttp.status === 200){<br>        }<br>    }</p>
+<h1 id="ajax的使用"><a href="#ajax的使用" class="headerlink" title="ajax的使用"></a>ajax的使用</h1><p>(1)创建<code>XMLHttpRequest</code>对象,也就是创建一个异步调用对象.<br>(2)创建一个新的<code>HTTP</code>请求,并指定该<code>HTTP</code>请求的方法、<code>URL</code>及验证信息.<br>(3)设置响应<code>HTTP</code>请求状态变化的函数.<br>(4)发送<code>HTTP</code>请求.<br>(5)获取异步调用返回的数据.<br>(6)使用<code>JavaScript</code>和<code>DOM</code>实现局部刷新.<br>    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xmlHttp.open(<span class="string">'GET'</span>,<span class="string">'demo.php'</span>,<span class="string">'true'</span>);</span><br><span class="line">xmlHttp.send()</span><br><span class="line">xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xmlHttp.readyState === <span class="number">4</span> &amp; xmlHttp.status === <span class="number">200</span>)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="AJAX的工作原理"><a href="#AJAX的工作原理" class="headerlink" title="AJAX的工作原理"></a>AJAX的工作原理</h1><p><code>Ajax</code>的工作原理相当于在用户和服务器之间加了—个中间层(<code>AJAX</code>引擎),使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证和数据处理等都交给<code>Ajax</code>引擎自己来做, 只有确定需要从服务器读取新数据时再由<code>Ajax</code>引擎代为向服务器提交请求。</p>
 <h1 id="ajax优缺点"><a href="#ajax优缺点" class="headerlink" title="ajax优缺点"></a>ajax优缺点</h1><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><pre><code>无刷新更新数据
 异步与服务器通信
