@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
+<meta name="description" content="移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。 移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式： 第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationcha">
 <meta name="keywords" content="app,js,css,h5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端之rem的几种方式">
 <meta property="og:url" content="http://sheery0913.github.io/2018/05/28/移动端之rem的几种方式/index.html">
 <meta property="og:site_name" content="Sheery">
-<meta property="og:description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
+<meta property="og:description" content="移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。 移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式： 第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationcha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T07:47:03.468Z">
+<meta property="og:updated_time" content="2018-05-28T07:52:29.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端之rem的几种方式">
-<meta name="twitter:description" content="第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationchange&amp;apos; in window ? &amp;apos;orientationchange&amp;apos; : &amp;apos;resize&amp;apos;,     recalc = function () {">
+<meta name="twitter:description" content="移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。 移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式： 第一种 (function (doc, win) {var docEl = doc.documentElement,     resizeEvt = &amp;apos;orientationcha">
 
 
 
@@ -356,7 +356,9 @@
       
 
       
-        <h1 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h1><ul>
+        <pre><code>移动端需要匹配多种机型，简单的以px为单位，怎会在部分机型的适配上出现问题，因此出现的以rem为单位的可适配多种机型的可变计量单位。
+移动端适配机型有多种单位，此处着重讲述本人目前了解的关于rem的三种方式：
+</code></pre><h1 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h1><ul>
 <li>(function (doc, win) {<pre><code>var docEl = doc.documentElement,
     resizeEvt = &apos;orientationchange&apos; in window ? &apos;orientationchange&apos; : &apos;resize&apos;,
     recalc = function () {
