@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Sheery">
 <meta property="og:description" content="闭包是js中的一大难点，基本面试都会被问到。js文档中的闭包解释感觉又特别晦涩难懂，自己一直也是迷迷糊糊的，从事前端好几年了，总感觉自己对闭包的概念还是不是特别清晰。再回首关于闭包，要多谢百度上的大神们，看了好多篇关于闭包的解释，再加上自己平时的经验积累，于是对闭包又有了深一层的理解。 闭包概念：一个函数调用另一个函数的变量，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。 闭包，一共有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T08:18:25.467Z">
+<meta property="og:updated_time" content="2018-06-06T08:20:43.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点整理之闭包">
 <meta name="twitter:description" content="闭包是js中的一大难点，基本面试都会被问到。js文档中的闭包解释感觉又特别晦涩难懂，自己一直也是迷迷糊糊的，从事前端好几年了，总感觉自己对闭包的概念还是不是特别清晰。再回首关于闭包，要多谢百度上的大神们，看了好多篇关于闭包的解释，再加上自己平时的经验积累，于是对闭包又有了深一层的理解。 闭包概念：一个函数调用另一个函数的变量，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。 闭包，一共有">
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/skills/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/knowledge/" itemprop="url" rel="index">
+                    <span itemprop="name">知识点</span>
                   </a>
                 </span>
 
@@ -385,7 +385,7 @@
 <li>内部的函数可以引用外部函数的参数和变量</li>
 <li>参数和变量不会被垃圾回收机制所收回</li>
 </ul>
-<p><strong>例子 1</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        b++; </span><br><span class="line">        alert(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">aaa();</span><br></pre></td></tr></table></figure></p>
+<p><strong>例子 1</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        b++; </span><br><span class="line">        alert(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line">aaa();</span><br></pre></td></tr></table></figure></p>
 <p>这个例子就是很明显的闭包，函数里面嵌套函数，同时内部的函数bbb又可以访问到外部函数aaa中的变量，至于第三个特征，我们都知道在JS解析机制中，函数内的变量在函数调用完后会被销毁，但在这里b没有被销毁，因为他还会被里面的函数bbb引用。不过这个函数是不会弹出的，因为<code>aaa()</code>函数里面的<code>bbb()</code>函数并没有被调用，所以<code>alert(b)</code>没有被执行。</p>
 <hr>
 <p><strong>例子 2</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bbb</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        b++; </span><br><span class="line">        alert(b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bbb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c=aaa(); <span class="comment">//此时aaa被执行 同时把返回结果bbb 赋给c </span></span><br><span class="line">c();<span class="comment">//6</span></span><br><span class="line">c();<span class="comment">//7</span></span><br><span class="line">c();<span class="comment">//8</span></span><br></pre></td></tr></table></figure></p>
